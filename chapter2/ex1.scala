@@ -29,3 +29,32 @@ println(uniProd)
 //             Scaladoc.)
 val uniProdFold = "Hello".foldLeft(1)((acc, curr) => acc * curr.toInt)
 println(uniProdFold)
+
+//exercise 8: Write a function product(s : String) that computes the product, as described
+// in the preceding exercises.
+def product(s: String) = s.foldLeft(1)((acc, curr) => acc * curr.toInt)
+
+println(product("Some very veeeeery long string"))
+
+// exercise 9: Make the function of the preceding exercise a recursive function.
+def recursiveProduct(s: String): Int = {
+    if(s.length == 0) 1
+    else s.head.toInt * recursiveProduct(s.tail)
+}
+
+println(recursiveProduct("Hello"))
+
+// Write a function that computes x n , where n is an integer. Use the following
+//   recursive definition
+
+def xToPow(x: Int, n: Int): Int = {
+    if (n == 0) 1
+    else if (n < 0) 1 / xToPow(x, n + 1)
+    else if (n % 2 == 0) xToPow(x, n / 2) * xToPow(x, n / 2)
+    else  x * xToPow(x, n - 1)
+
+}
+
+println(xToPow(-3, 3))
+println(xToPow(5, 5))
+println(xToPow(6, 3))
