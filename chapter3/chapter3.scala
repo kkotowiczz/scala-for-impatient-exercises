@@ -20,3 +20,6 @@ val arr2 = Array(1, 2, 3, 4, 5)
 for(i <- 0 until arr2.length if i % 2 == 1) { val temp = arr2(i); arr2(i) = arr2(i - 1); arr2(i - 1) = temp }
 
 arr2.foreach(println)
+
+val arr3 = Array(1, 2, 3, 4, 5)
+
