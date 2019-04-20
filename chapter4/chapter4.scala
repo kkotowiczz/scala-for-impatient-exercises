@@ -1,6 +1,6 @@
 import java.util
 
-import scala.collection.immutable.{HashMap, SortedMap}
+import scala.collection.immutable.{HashMap, ListMap, SortedMap}
 import scala.io.Source
 import scala.collection.JavaConverters._
 
@@ -38,3 +38,10 @@ treeMap.forEach((key, v) => println(key, v))
 
 
 fileSource.close
+
+val weekdaysMap = ListMap("Monday" -> java.util.Calendar.MONDAY, "Tuesday" -> java.util.Calendar.TUESDAY, "Wednesday" -> java.util.Calendar.WEDNESDAY, "Thursday" -> java.util.Calendar.THURSDAY,
+                          "Friday" -> java.util.Calendar.FRIDAY, "Saturday" -> java.util.Calendar.SATURDAY, "Sunday" -> java.util.Calendar.SUNDAY)
+weekdaysMap.foreach(println)
+
+val properties = java.lang.System.getProperties
+properties.forEach((key, v) => println(key, v))
