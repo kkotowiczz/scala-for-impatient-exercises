@@ -45,3 +45,33 @@ weekdaysMap.foreach(println)
 
 val properties = java.lang.System.getProperties
 properties.forEach((key, v) => println(key, v))
+
+//Exercise 8: Write a function minmax(values: Array[Int]) that returns a pair containing the
+// smallest and the largest values in the array.
+
+def minmax(values: Array[Int]): (Int, Int) = {
+  (values.min, values.max)
+}
+val numArr = Array(-30, 123, 5000, -123, 2112, 319213, -31)
+val mm = minmax(numArr)
+println(mm)
+
+def lteeqgt(values: Array[Int], v: Int): (Array[Int], Array[Int], Array[Int]) = {
+  val partitioned = values.partition(_ >= v)
+  val s = partitioned._1.partition(_ > v)
+  (s._1, s._2, partitioned._2)
+}
+
+val leg = lteeqgt(Array(1, 39, 5, 1, 3, 40, 5, 123, 1235, 992, -33), 5)
+
+leg._1.foreach(println)
+leg._2.foreach(println)
+leg._3.foreach(println)
+
+
+
+
+
+
+
+
