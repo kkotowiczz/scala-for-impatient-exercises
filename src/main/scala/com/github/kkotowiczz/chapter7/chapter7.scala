@@ -2,8 +2,6 @@ package com.github.kkotowiczz.chapter7
 
 import com.github.kkotowiczz.chapter7.outerPackage.horstmannPackage.{Ex1Sol1, Ex1Sol2}
 
-
-
 object chapter7 extends App {
   /* 1.Write an example program to demonstrate that
 package com.horstmann.impatient
@@ -48,21 +46,16 @@ package impatient
 
   /*
   8.What is the effect of
-import java._
-import javax._
-Is this a good idea?
-
+  import java._
+  import javax._
+  Is this a good idea?
 
   It's not good idea, importing all classes from package can lead to name collision
-   */
 
-  /*
+
     10. Apart from StringBuilder, what other members of java.lang does the scala
     package override?
 
     All "primitives boxing Class" f.e. Byte, Char, Long etc.
    */
-
-
-
 }
