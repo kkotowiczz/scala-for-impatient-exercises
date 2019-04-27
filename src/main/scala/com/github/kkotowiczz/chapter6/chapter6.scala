@@ -2,7 +2,7 @@ package com.github.kkotowiczz.chapter6
 
 import com.github.kkotowiczz.chapter6.CardSuits.CardSuits
 
-object chapter6 extends App{
+object chapter6 extends App {
   val inchesToCentimeters =  new UnitConversion(2.54)
   println(inchesToCentimeters.convert(213.54))
 
