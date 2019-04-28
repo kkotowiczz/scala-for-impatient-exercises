@@ -8,11 +8,11 @@ package object random {
 
   def setSeed(seed: Int) = this.seed = seed
 
-  def nextDouble(): Double = {
+  def nextDouble: Double = {
     (seed * a + b) % Math.pow(2, n)
   }
 
-  def nextInt(): Int = {
-    nextDouble().toInt
+  def nextInt: Int = {
+    nextDouble.toInt
   }
 }
