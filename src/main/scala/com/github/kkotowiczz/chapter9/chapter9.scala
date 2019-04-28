@@ -24,10 +24,12 @@ numbers. Print the sum, average, maximum, and minimum of the numbers
 in the file
    */
 
-  val secondSource = Source.fromFile(filePath).getLines
+  val ss = Source.fromFile(filePath)
+  val secondSource = ss.getLines()
   val wordsLongerThan12 = secondSource.flatMap(_.split("\\s")).filter(_.length > 12)
 //  wordsLongerThan12.foreach(println)
   sourceFile.close()
+  ss.close()
 
   // write file with random number of doubles
 
@@ -41,7 +43,7 @@ in the file
       next = Math.random() * range
     } yield next
     printWriter.write(doubles.mkString("\n"))
-    printWriter.close
+    printWriter.close()
   }
 
   writeDoubleToFile()
@@ -63,7 +65,7 @@ in the file
 
   /*
     Write a Scala program that writes the powers of 2 and their reciprocals to a
-    file, with the exponent ranging from 0 to 20. Line up the columns:
+    chapfile, with the exponent ranging from 0 to 20. Line up the columns:
 
    */
 
@@ -79,5 +81,31 @@ in the file
     printWriter.close()
   }
   writePowersAndReciprocals()
+
+  /*
+  Write a Scala program that reads a text file and prints all tokens in the file
+  that are not floating-point numbers. Use a regular expression.
+   */
+
+  // TODO
+
+
+  /*
+  Write a Scala program that prints the src attributes of all img tags of a web
+  page. Use regular expressions and groups.
+   */
+  def getHtmlFile(url: String) = {
+    val html = Source.fromURL(url)
+    html.mkString("")
+  }
+
+  val htmlFile = getHtmlFile("https://dorzeczy.pl/")
+  val imagePattern = """src=([\w\W]+?)""""
+  val imgs = for {
+    line <- htmlFile.split(" ")
+    if(line.matches(imagePattern))
+  } yield line
+
+  imgs.foreach(println)
 
 }
