@@ -103,7 +103,7 @@ in the file
   val imagePattern = """src=([\w\W]+?)""""
   val imgs = for {
     line <- htmlFile.split(" ")
-    if(line.matches(imagePattern))
+    if line.matches(imagePattern)
   } yield line
 
   imgs.foreach(println)
