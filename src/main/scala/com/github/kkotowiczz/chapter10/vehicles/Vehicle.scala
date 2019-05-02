@@ -6,7 +6,7 @@ trait Vehicle extends Moving {
   val canMoveOn: List[Surface]
   override def move(surface: Surface): Unit = {
     if(canMoveOn.contains(surface))
-      println("Moving on " + surface)
-    else println("Cannot move")
+      println(this.getClass.getName + " moving on " + surface)
+    else println(this.getClass.getName +  " cannot move on " + surface )
   }
 }
