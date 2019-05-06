@@ -28,4 +28,19 @@ def largest(fun: Int => Int, inputs: Seq[Int]) = {
 
 println(largest(x => 10 * x - x * x, 1 to 10))
 
-def adjustToPair()
+def adjustToPair(f: (Int, Int) => Int)(x: Tuple2[Int, Int]): Int =  f(x._1, x._2)
+
+val pairs = (1 to 10) zip (11 to 20)
+val adjusted = pairs.map(adjustToPair(_ * _))
+adjusted.foreach(println)
+
+val strings = Array("Hello", "Scala", "Boi", "!")
+val nums = Array(5, 5, 3, 1)
+
+val corr = strings.corresponds(nums)(_.length == _)
+
+print(corr)
+
+def corrFun[A, B](a: Seq[A], b: Seq[B], f: (A, B) => Boolean) = {
+  a.zip(b).forall(p => f(p._1, p._2))
+}
