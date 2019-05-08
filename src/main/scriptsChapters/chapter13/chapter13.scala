@@ -19,3 +19,14 @@ def reducerReversing(lst: List[Int]) = (List[Int]() /: lst)((curr, acc) => acc +
 println(reducer1(List(1, 3, 5, 6)))
 println(reducer2(List(1, 4, 6, 1, 3)))
 println(reducerReversing(List(1, 4, 6, 1, 3)))
+
+def columns(list: List[Int], columnsNumber: Int) = {
+  val quantityOfArrays = list.length / columnsNumber
+  val grouped = list.grouped(quantityOfArrays)
+  val aggregated = for {
+    i <- 0 to quantityOfArrays
+    if(grouped.hasNext)
+  } yield grouped.next().toArray
+  aggregated.toArray
+}
+columns(List(1, 2, 3, 4, 5, 6), 3).foreach(println)
