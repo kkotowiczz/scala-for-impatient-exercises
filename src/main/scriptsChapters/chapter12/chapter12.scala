@@ -1,7 +1,6 @@
 def values(f: Int => Int, low: Int, high: Int) = for(i <- low to high) yield(i, f(i))
 
 println(values(x => x * x, -5, 5))
-
 // How do you get the largest element of an array with reduceLeft ?
 
 val array = Array(1, 70, 30, 213, 381, 41412, 14, 1248, 211, 10, 40)
