@@ -30,3 +30,12 @@ def columns(list: List[Int], columnsNumber: Int) = {
   aggregated.toArray
 }
 columns(List(1, 2, 3, 4, 5, 6), 3).foreach(println)
+
+def continentWithMostTimezones() = {
+  val tz = java.util.TimeZone.getAvailableIDs().filter(_.contains("/")).groupBy(tz => tz.substring(0, tz.indexOf("/"))).maxBy(_._2.length)
+  tz
+}
+
+val mostTZs = continentWithMostTimezones()
+
+println(mostTZs._1, mostTZs._2.length)
